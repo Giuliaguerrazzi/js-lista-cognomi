@@ -5,19 +5,24 @@
 // scrivi anche la posizione "umana" della lista in cui il nuovo utente si trova
 
 var listaCognomi = ['Bianchi', 'Rossi', 'Duzioni', 'Balsano', 'Giorgini'];
-listaCognomi.sort();
 
-// var cognome = prompt('Il tuo cognome è sulla lista?');
+var cognome = prompt('Il tuo cognome è sulla lista?');
+
+listaCognomi.push(cognome);
+
+listaCognomi.sort();
 
   var items = '';
 
-for (var i = 0; i < listaCognomi.lenght; i++) {
+for (var i = 0; i < listaCognomi.length; i++) {
   var item = listaCognomi[i];
 
   items += '<li>' + item + '</li>';
-
 }
 
 document.getElementById('username-list').innerHTML = items;
+
+document.getElementById('result').innerHTML = 'Il tuo cognome è il numero ' + (listaCognomi.indexOf(cognome) + 1);
+
 
 console.log(listaCognomi);
